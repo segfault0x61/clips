@@ -11,13 +11,13 @@
     />
     <p
       class="text-red-400"
-      *ngIf="registerForm.controls['name'].errors?.['required']"
+      *ngIf="registerForm.controls['name'].touched && registerForm.controls['name'].dirty && registerForm.controls['name'].errors?.['required']"
     >
       Field is required.
     </p>
     <p
       class="text-red-400"
-      *ngIf="registerForm.controls['name'].errors?.['minlength']"
+      *ngIf="registerForm.controls['name'].touched && registerForm.controls['name'].dirty && registerForm.controls['name'].errors?.['minlength']"
     >
       The value you inputed is
       {{ registerForm.controls['name'].errors?.['minlength'].actualLength }}
