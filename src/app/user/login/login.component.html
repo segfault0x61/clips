@@ -1,5 +1,5 @@
 <!-- Login Form -->
-<form #loginForm="ngForm">
+<form #loginForm="ngForm" (ngSubmit)="login()">
   <!-- Email -->
   <div class="mb-3">
     <label class="inline-block mb-2">Email</label>
@@ -36,7 +36,7 @@
       *ngIf="password.errors && password.touched && password.dirty"
       class="text-red-400"
     >
-      Password is invalid
+      Password is invalid.
     </p>
   </div>
   <button
