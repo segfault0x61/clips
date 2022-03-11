@@ -26,7 +26,13 @@
             >
           </li>
           <li>
-            <a class="px-2">Upload</a>
+            <a
+              class="px-2"
+              routerLink="/upload"
+              routerLinkActive="text-indigo-400"
+              [routerLinkActiveOptions]="{ exact: true }"
+              >Upload</a
+            >
           </li>
 
           <li>
@@ -34,7 +40,11 @@
           </li>
         </ng-template>
         <li>
-          <a class="px-2" routerLink="/about" routerLinkActive="text-indigo-400"
+          <a
+            class="px-2"
+            routerLink="/about"
+            routerLinkActive="text-indigo-400"
+            [routerLinkActiveOptions]="{ exact: true }"
             >About</a
           >
         </li>
