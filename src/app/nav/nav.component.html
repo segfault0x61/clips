@@ -17,18 +17,26 @@
         </li>
         <ng-template #authLinks>
           <li>
-            <a class="px-2" href="#">Manage</a>
+            <a
+              class="px-2"
+              routerLink="/manage"
+              routerLinkActive="text-indigo-400"
+              [routerLinkActiveOptions]="{ exact: true }"
+              >Manage</a
+            >
           </li>
           <li>
-            <a class="px-2" href="#">Upload</a>
+            <a class="px-2">Upload</a>
           </li>
 
           <li>
-            <a (click)="logout($event)" class="px-2" href="#"> Logout </a>
+            <a (click)="auth.logout($event)" class="px-2" href="#"> Logout </a>
           </li>
         </ng-template>
         <li>
-          <a class="px-2" routerLink="/about">About</a>
+          <a class="px-2" routerLink="/about" routerLinkActive="text-indigo-400"
+            >About</a
+          >
         </li>
       </ul>
       <!-- Language Switcher -->
