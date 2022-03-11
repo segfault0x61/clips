@@ -4,8 +4,9 @@ import {
   AngularFirestore,
   AngularFirestoreCollection,
 } from '@angular/fire/compat/firestore';
-import { delay, map, Observable } from 'rxjs';
+import { delay, map, Observable, filter } from 'rxjs';
 import { Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd } from '@angular/router';
 
 import IUser from '../models/user.model';
 
@@ -21,11 +22,15 @@ export class AuthService {
   constructor(
     private auth: AngularFireAuth,
     private db: AngularFirestore,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) {
     this.usersCollection = db.collection('users');
     this.isAuthenticated$ = auth.user.pipe(map((user) => !!user));
     this.isAuthenticatedWithDelay$ = this.isAuthenticated$.pipe(delay(1000));
+    this.router.events
+      .pipe(filter((e) => e instanceof NavigationEnd))
+      .subscribe(console.log);
   }
 
   public async createUser(userData: IUser) {

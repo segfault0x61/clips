@@ -26,7 +26,6 @@ export class ModalService {
 
   register(id: string) {
     this.modals.push({ id, visible: false });
-    console.log(this.modals);
   }
 
   unregister(id: string) {
