@@ -21,6 +21,7 @@
   <!-- Video List -->
   <div class="grid grid-cols-1 gap-4 lg:grid-cols-3">
     <div
+      *ngFor="let clip of clips"
       class="flex flex-col justify-start mt-6 shadow-xl rounded-tl-2xl rounded-br-2xl bg-secondary"
     >
       <!-- Image -->
@@ -34,7 +35,7 @@
       <!-- Body -->
       <div class="p-6 text-2xl">
         <!-- Link -->
-        <a href="#" class="mb-2 font-bold"> Game Highlighting Clip </a>
+        <a href="#" class="mb-2 font-bold"> {{ clip.title }} </a>
         <a
           href="#"
           class="px-2 py-1 ml-2 text-sm text-white bg-gray-400 rounded"
@@ -46,207 +47,14 @@
       <!-- Actions -->
       <div class="flex p-2 mt-auto text-2xl text-center bg-gray-800">
         <a
+          (click)="openModal($event, clip)"
           href="#"
           class="flex-1 p-2 transition border-r-2 border-gray-700 border-right hover:text-indigo-400"
         >
           <span class="text-base material-icons">build</span>
         </a>
         <a
-          href="#"
-          class="flex-1 p-2 transition rounded-br-2xl hover:text-indigo-400"
-        >
-          <span class="text-base material-icons">delete</span>
-        </a>
-      </div>
-    </div>
-    <div
-      class="flex flex-col justify-start mt-6 shadow-xl rounded-tl-2xl rounded-br-2xl bg-secondary"
-    >
-      <!-- Image -->
-      <a href="#">
-        <img
-          class="w-full card-img-top rounded-tl-2xl"
-          src="assets/img/1.jpg"
-        />
-      </a>
-
-      <!-- Body -->
-      <div class="p-6 text-2xl">
-        <!-- Link -->
-        <a href="#" class="mb-2 font-bold"> Game Highlighting Clip </a>
-        <a
-          href="#"
-          class="px-2 py-1 ml-2 text-sm text-white bg-gray-400 rounded"
-        >
-          Copy Link
-        </a>
-      </div>
-
-      <!-- Actions -->
-      <div class="flex p-2 mt-auto text-2xl text-center bg-gray-800">
-        <a
-          href="#"
-          class="flex-1 p-2 transition border-r-2 border-gray-700 border-right hover:text-indigo-400"
-        >
-          <span class="text-base material-icons">build</span>
-        </a>
-        <a
-          href="#"
-          class="flex-1 p-2 transition rounded-br-2xl hover:text-indigo-400"
-        >
-          <span class="text-base material-icons">delete</span>
-        </a>
-      </div>
-    </div>
-    <div
-      class="flex flex-col justify-start mt-6 shadow-xl rounded-tl-2xl rounded-br-2xl bg-secondary"
-    >
-      <!-- Image -->
-      <a href="#">
-        <img
-          class="w-full card-img-top rounded-tl-2xl"
-          src="assets/img/1.jpg"
-        />
-      </a>
-
-      <!-- Body -->
-      <div class="p-6 text-2xl">
-        <!-- Link -->
-        <a href="#" class="mb-2 font-bold"> Game Highlighting Clip </a>
-        <a
-          href="#"
-          class="px-2 py-1 ml-2 text-sm text-white bg-gray-400 rounded"
-        >
-          Copy Link
-        </a>
-      </div>
-
-      <!-- Actions -->
-      <div class="flex p-2 mt-auto text-2xl text-center bg-gray-800">
-        <a
-          href="#"
-          class="flex-1 p-2 transition border-r-2 border-gray-700 border-right hover:text-indigo-400"
-        >
-          <span class="text-base material-icons">build</span>
-        </a>
-        <a
-          href="#"
-          class="flex-1 p-2 transition rounded-br-2xl hover:text-indigo-400"
-        >
-          <span class="text-base material-icons">delete</span>
-        </a>
-      </div>
-    </div>
-    <div
-      class="flex flex-col justify-start mt-6 shadow-xl rounded-tl-2xl rounded-br-2xl bg-secondary"
-    >
-      <!-- Image -->
-      <a href="#">
-        <img
-          class="w-full card-img-top rounded-tl-2xl"
-          src="assets/img/1.jpg"
-        />
-      </a>
-
-      <!-- Body -->
-      <div class="p-6 text-2xl">
-        <!-- Link -->
-        <a href="#" class="mb-2 font-bold"> Game Highlighting Clip </a>
-        <a
-          href="#"
-          class="px-2 py-1 ml-2 text-sm text-white bg-gray-400 rounded"
-        >
-          Copy Link
-        </a>
-      </div>
-
-      <!-- Actions -->
-      <div class="flex p-2 mt-auto text-2xl text-center bg-gray-800">
-        <a
-          href="#"
-          class="flex-1 p-2 transition border-r-2 border-gray-700 border-right hover:text-indigo-400"
-        >
-          <span class="text-base material-icons">build</span>
-        </a>
-        <a
-          href="#"
-          class="flex-1 p-2 transition rounded-br-2xl hover:text-indigo-400"
-        >
-          <span class="text-base material-icons">delete</span>
-        </a>
-      </div>
-    </div>
-    <div
-      class="flex flex-col justify-start mt-6 shadow-xl rounded-tl-2xl rounded-br-2xl bg-secondary"
-    >
-      <!-- Image -->
-      <a href="#">
-        <img
-          class="w-full card-img-top rounded-tl-2xl"
-          src="assets/img/1.jpg"
-        />
-      </a>
-
-      <!-- Body -->
-      <div class="p-6 text-2xl">
-        <!-- Link -->
-        <a href="#" class="mb-2 font-bold"> Game Highlighting Clip </a>
-        <a
-          href="#"
-          class="px-2 py-1 ml-2 text-sm text-white bg-gray-400 rounded"
-        >
-          Copy Link
-        </a>
-      </div>
-
-      <!-- Actions -->
-      <div class="flex p-2 mt-auto text-2xl text-center bg-gray-800">
-        <a
-          href="#"
-          class="flex-1 p-2 transition border-r-2 border-gray-700 border-right hover:text-indigo-400"
-        >
-          <span class="text-base material-icons">build</span>
-        </a>
-        <a
-          href="#"
-          class="flex-1 p-2 transition rounded-br-2xl hover:text-indigo-400"
-        >
-          <span class="text-base material-icons">delete</span>
-        </a>
-      </div>
-    </div>
-    <div
-      class="flex flex-col justify-start mt-6 shadow-xl rounded-tl-2xl rounded-br-2xl bg-secondary"
-    >
-      <!-- Image -->
-      <a href="#">
-        <img
-          class="w-full card-img-top rounded-tl-2xl"
-          src="assets/img/1.jpg"
-        />
-      </a>
-
-      <!-- Body -->
-      <div class="p-6 text-2xl">
-        <!-- Link -->
-        <a href="#" class="mb-2 font-bold"> Game Highlighting Clip </a>
-        <a
-          href="#"
-          class="px-2 py-1 ml-2 text-sm text-white bg-gray-400 rounded"
-        >
-          Copy Link
-        </a>
-      </div>
-
-      <!-- Actions -->
-      <div class="flex p-2 mt-auto text-2xl text-center bg-gray-800">
-        <a
-          href="#"
-          class="flex-1 p-2 transition border-r-2 border-gray-700 border-right hover:text-indigo-400"
-        >
-          <span class="text-base material-icons">build</span>
-        </a>
-        <a
+          (click)="deleteClip($event, clip)"
           href="#"
           class="flex-1 p-2 transition rounded-br-2xl hover:text-indigo-400"
         >
@@ -257,28 +65,4 @@
   </div>
 </div>
 
-<!-- Edit Modal -->
-<div class="hidden">
-  <p class="text-2xl font-bold">Edit Video</p>
-
-  <!-- Form -->
-  <form>
-    <!-- Title -->
-    <div class="mt-4">
-      <label class="block mb-4 text-xl">Title</label>
-      <input
-        placeholder="Enter Title"
-        class="block w-full py-1.5 px-3 text-gray-200 border border-gray-400 transition duration-500 focus:outline-none rounded bg-transparent focus:border-indigo-400"
-      />
-    </div>
-
-    <div class="mt-4 text-right">
-      <button
-        type="submit"
-        class="inline-flex justify-center px-4 py-2 text-white bg-indigo-600 border border-transparent rounded-md shadow-sm focus:outline-none"
-      >
-        Update
-      </button>
-    </div>
-  </form>
-</div>
+<app-edit [activeClip]="activeClip" (update)="update($event)"></app-edit>
