@@ -29,6 +29,11 @@
           class="w-full px-10 py-40 text-xl text-center transition duration-500 border border-gray-400 border-dashed rounded cursor-pointer hover:text-white hover:bg-indigo-400 hover:border-indigo-400 hover:border-solid"
         >
           <h5>Drop your file here (mp4 only!)</h5>
+          <span
+            *ngIf="ffmpegService.isRunning"
+            class="p-8 text-6xl text-center material-icons animate-spin"
+            >autorenew</span
+          >
         </div>
         <input type="file" class="mt-4" (change)="storeFile($event)" />
       </ng-container>
@@ -45,14 +50,11 @@
           <!-- Screenshots -->
           <h2 class="mb-4 text-xl">Select a Thumbnail</h2>
           <div class="grid grid-cols-1 gap-4 lg:grid-cols-3">
-            <div class="border-8 border-green-400 cursor-pointer">
-              <img src="assets/img/1.jpg" />
-            </div>
-            <div class="border-8 border-transparent cursor-pointer">
-              <img src="assets/img/2.jpg" />
-            </div>
-            <div class="border-8 border-transparent cursor-pointer">
-              <img src="assets/img/3.jpg" />
+            <div
+              *ngFor="let screenshot of screenshots"
+              class="border-8 border-green-400 cursor-pointer"
+            >
+              <img [src]="screenshot | safeURL" />
             </div>
           </div>
 
